@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Entidade 2777744</title>
+</head>
+<body style="background-color: black;">
+  <form>
+    <center>
+    <label style="color: white;" for="pswd"> Insira sua senha: </label>
+    <input type="text" id="pswd">
+    <input type="button" value="Enter" onclick="checkPswd();" />
+    </center>
+  </form>
+  <script>
+  const passwords = [
+  {
+      pass: "drew",
+      page: "jail"
+  },
+  {
+      pass: "max",
+      page: "max"
+  },
+  {
+      pass: "another song",
+      page: "https://youtu.be/HuGhfuMrUUg"
+  },
+  {
+      pass: "mah",
+      page: "https://www.amazon.com.br/s?k=ballet+flats&__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=38S8DJMLTWKSZ&sprefix=ballet+flat%2Caps%2C236&ref=nb_sb_noss_2"
+  },
+  {
+      pass: "pawla",
+      page: "https://www.google.com/search?q=rachel+zegler&oq=rachel+zegler&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCDIyMTlqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8"
+  },
+  {
+      pass: "raven",
+      page: "https://www.google.com/search?sca_esv=4d69d7027f1defd9&sxsrf=ADLYWIKI4JhHgbJPDMOgJ3XqXIAlWNnwdQ:1724000965582&q=shrooms&tbm=shop&source=lnms&fbs=AEQNm0AuaLfhdrtx2b9ODfK0pnmi046uB92frSWoVskpBryHTtShVNbk-60xlcGTvYzJ-DKSTGtJjS2FjB5pmTql0ubR5COwup-84DRI4TBMTyGTZvR2wQNNUxZFITGP9w-kUjoQPMqsR8Q2-ZsQRgRfDfX4x0xEps3t3ZHuMPR57n6eA5sF54kQTNPD1yvyYTtaNUtyQONvHfurshD6Zo_ZeQJhdK9-Kg&ved=1t:200715&ictx=111&biw=1280&bih=551&dpr=1.5https://www.talktofrank.com/drug/magic-mushrooms"
+  },
+  {
+      pass: "oi",
+      page: "oi"
+  },
+  {
+      pass: "tchau",
+      page: "tchau"
+  },
+  {
+      pass: "bella",
+      page: "https://www.google.com/search?sca_esv=5af0601d0d0f13a8&sxsrf=ADLYWIJqDDxQq3vADzmEW8NmcZaslymxVw:1724078937888&q=taylor+swift+red&tbm=shop&source=lnms&fbs=AEQNm0AuaLfhdrtx2b9ODfK0pnmi046uB92frSWoVskpBryHTrdWqiVbaH6EqK0Fq9hkAkqRDuhGs7UQnPtZiL0Bzcj78aaFR2vnR4DfQyahVzxKNVahghfRWcP18tIQDI-SEd9Equ5g0GYsIG8jai2_zN8y16CRuLHNs28Ydr3E9AarJg4DUYUsqKibma7jzI96q7Qwb-v6RNSYne1ZlQPcwLjO_sXAfA&ved=1t:200715&ictx=111&biw=1280&bih=551&dpr=1.5"
+  },
+  {
+      pass: "lethie",
+      page: "https://www.google.com/search?q=my+little+pony&sca_esv=b42ea388290e63af&biw=1280&bih=551&tbm=shop&sxsrf=ADLYWILxLC4t9i1vxkT3L1YCu72ZBhJmyA%3A1724341856108&ei=YF7HZrz7BZnT1sQP_uOO0AE&ved=0ahUKEwi8q7f--YiIAxWZqZUCHf6xAxoQ4dUDCAg&uact=5&oq=my+little+pony&gs_lp=Egtwcm9kdWN0cy1jYyIObXkgbGl0dGxlIHBvbnkyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAESPgSUABY5Q5wAHgAkAEAmAGoAaAByxCqAQQwLjE0uAEDyAEA-AEBmAIOoAL9EMICChAAGIAEGEMYigXCAgcQABiABBgKmAMAkgcEMC4xNKAHhkk&sclient=products-cc"
+  },
+  {
+      pass: "ananda",
+      page: "https://www.google.com/search?sca_esv=b42ea388290e63af&sxsrf=ADLYWIIG9o7Riz34NVbh7NhcK-_BCMrs4w:1724341853520&q=strawberry+dress&tbm=shop&source=lnms&fbs=AEQNm0AuaLfhdrtx2b9ODfK0pnmi2aC_xrXWMCzvpYJNclNNRCOG4t8WPeBQqnJC-vvwlgOo7k5OE_Mn9egEkOrddQqDlsifiZAbLa_6h-nfMnUJRqET7L7LnYoWq94SjUixzrA-_dD6VrIn0gWoXR31UoYIQDLWtMNIBL_X-Xbrl4oVbd6sx3gFeeyw_iii69pBSpEdNS2BVfj78ZaERFTU8O4r-A_bfw&ved=1t:200715&ictx=111&biw=1280&bih=551&dpr=1.5"
+  },
+  {
+      pass: "alex",
+      page: "https://www.google.com/search?q=the+sex+lives+of+college+girls&oq=the+sex+lives+of+college+girls&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRhA0gEINDg0MWowajeoAgCwAgA&sourceid=chrome&ie=UTF-8"
+  },
+  {
+      pass: "thom",
+      page: "https://www.ebay.com/sch/i.html?_from=R40&_trksid=p4432023.m570.l1313&_nkw=tommyinnit&_sacat=0"
+  },
+  {
+      pass: "ayla",
+      page: "anothersong"
+  },
+  {
+      pass: "presidente",
+      page: "anothersong"
+  },
+  {
+      pass: "kai",
+      page: "https://www.google.com/search?q=como+sair+do+nether&oq=como+sair+do+nether&gs_lcrp=EgZjaHJvbWUyCQgAEEUYORiABDIKCAEQABiABBiiBDIKCAIQABiABBiiBNIBCDI3MDdqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8"
+  },
+  {
+      pass: "gi",
+      page: "https://www.google.com/search?q=terapia&oq=terapia&gs_lcrp=EgZjaHJvbWUyDwgAEEUYORixAxjJAxiABDIKCAEQABixAxiABDINCAIQABiSAxiABBiKBTINCAMQABiSAxiABBiKBTIKCAQQABixAxiABDINCAUQABiDARixAxiABDIKCAYQABixAxiABDINCAcQABiDARixAxiABDIHCAgQABiPAjIHCAkQABiPAtIBCDExOTRqMGo5qAIAsAIA&sourceid=chrome&ie=UTF-8"
+  },
+  {
+      pass: "comece aqui",
+      page: "anothersong"
+  },
+  {
+      pass: "die verwandlung",
+      page: "zyoqsfuh"
+  },
+  {
+      pass: "keyboard",
+      page: "https://youtu.be/wq5GcZ8gMvQ"
+  },
+  {
+      pass: "las canteras",
+      page: "https://youtu.be/z0SGdmSG2WM"
+  },
+  {
+      pass: "nomes",
+      page: "gorodzimy"
+  },
+  {
+      pass: "cidade do verão",
+      page: "vshafns"
+  },
+  {
+      pass: "cidade da primavera",
+      page: "dfdspxf"
+  },
+  {
+      pass: "cidade do inverno",
+      page: "jaxey"
+  },
+  {
+      pass: "cidade do outono",
+      page: "thetruth"
+  },
+  {
+      pass: "beachway",
+      page: "carta"
+  },
+  {
+      pass: "deviltown",
+      page: "nutrition"
+  },
+  {
+      pass: "lux luminaris",
+      page: "VISITE"
+  },
+  {
+      pass: "gêmeos",
+      page: "lmm"
+  },
+  {
+      pass: "john jay",
+      page: "cda3"
+  },
+  {
+      pass: "estou bem",
+      page: "estoubem"
+  },
+  {
+      pass: "estou mal",
+      page: "estoumal"
+  },
+  {
+      pass: "quem é você",
+      page: "quemevoce"
+  },
+  {
+      pass: "de onde você vem",
+      page: "deondevocevem"
+  },
+  {
+      pass: "o que você quer",
+      page: "oquevocequer"
+  },
+  {
+      pass: "qual é seu nome",
+      page: "qualeseunome"
+  },
+  {
+      pass: "papaveraceae",
+      page: "cda4"
+  },
+  {
+      pass: "frozen",
+      page: "cda5"
+  },
+  {
+      pass: "deviltownmorreueunao",
+      page: "cda6"
+  },
+  {
+      pass: "20.1 g",
+      page: "cda7"
+  },
+  {
+      pass: "merda",
+      page: "https://www.google.com/search?sca_esv=4f737f0b4de0cae7&sxsrf=ADLYWILeVTeObfG1-SEjwLh4IUKBbbygog:1724784183262&q=sabonete&tbm=shop&source=lnms&fbs=AEQNm0AuaLfhdrtx2b9ODfK0pnmi046uB92frSWoVskpBryHTtShVNbk-60xlcGTvYzJ-DKSTGtJjS2FjB5pmTql0ubRQcrur8VCNRNtkKdC3ObBzLG5uJD927skmc0ffBzEdzn1wPWbrw_QIFG567mb2_EbEuDfKuOu5G-bbNI-b0-qO4lhPWOMWBBQT7ghTGIymUr9jDY14y96nlMbASnCVHJYdn7Taw&ved=1t:200715&ictx=111&biw=1280&bih=551&dpr=1.5"
+  },
+  {
+      pass: "puta",
+      page: "https://www.google.com/search?sca_esv=4f737f0b4de0cae7&sxsrf=ADLYWILeVTeObfG1-SEjwLh4IUKBbbygog:1724784183262&q=sabonete&tbm=shop&source=lnms&fbs=AEQNm0AuaLfhdrtx2b9ODfK0pnmi046uB92frSWoVskpBryHTtShVNbk-60xlcGTvYzJ-DKSTGtJjS2FjB5pmTql0ubRQcrur8VCNRNtkKdC3ObBzLG5uJD927skmc0ffBzEdzn1wPWbrw_QIFG567mb2_EbEuDfKuOu5G-bbNI-b0-qO4lhPWOMWBBQT7ghTGIymUr9jDY14y96nlMbASnCVHJYdn7Taw&ved=1t:200715&ictx=111&biw=1280&bih=551&dpr=1.5"
+  },
+  {
+      pass: "puta merda",
+      page: "https://www.google.com/search?sca_esv=4f737f0b4de0cae7&sxsrf=ADLYWILeVTeObfG1-SEjwLh4IUKBbbygog:1724784183262&q=sabonete&tbm=shop&source=lnms&fbs=AEQNm0AuaLfhdrtx2b9ODfK0pnmi046uB92frSWoVskpBryHTtShVNbk-60xlcGTvYzJ-DKSTGtJjS2FjB5pmTql0ubRQcrur8VCNRNtkKdC3ObBzLG5uJD927skmc0ffBzEdzn1wPWbrw_QIFG567mb2_EbEuDfKuOu5G-bbNI-b0-qO4lhPWOMWBBQT7ghTGIymUr9jDY14y96nlMbASnCVHJYdn7Taw&ved=1t:200715&ictx=111&biw=1280&bih=551&dpr=1.5"
+  },
+  {
+      pass: "cu",
+      page: "https://www.google.com/search?sca_esv=4f737f0b4de0cae7&sxsrf=ADLYWILeVTeObfG1-SEjwLh4IUKBbbygog:1724784183262&q=sabonete&tbm=shop&source=lnms&fbs=AEQNm0AuaLfhdrtx2b9ODfK0pnmi046uB92frSWoVskpBryHTtShVNbk-60xlcGTvYzJ-DKSTGtJjS2FjB5pmTql0ubRQcrur8VCNRNtkKdC3ObBzLG5uJD927skmc0ffBzEdzn1wPWbrw_QIFG567mb2_EbEuDfKuOu5G-bbNI-b0-qO4lhPWOMWBBQT7ghTGIymUr9jDY14y96nlMbASnCVHJYdn7Taw&ved=1t:200715&ictx=111&biw=1280&bih=551&dpr=1.5"
+  },
+  {
+      pass: "caralho",
+      page: "https://www.google.com/search?sca_esv=4f737f0b4de0cae7&sxsrf=ADLYWILeVTeObfG1-SEjwLh4IUKBbbygog:1724784183262&q=sabonete&tbm=shop&source=lnms&fbs=AEQNm0AuaLfhdrtx2b9ODfK0pnmi046uB92frSWoVskpBryHTtShVNbk-60xlcGTvYzJ-DKSTGtJjS2FjB5pmTql0ubRQcrur8VCNRNtkKdC3ObBzLG5uJD927skmc0ffBzEdzn1wPWbrw_QIFG567mb2_EbEuDfKuOu5G-bbNI-b0-qO4lhPWOMWBBQT7ghTGIymUr9jDY14y96nlMbASnCVHJYdn7Taw&ved=1t:200715&ictx=111&biw=1280&bih=551&dpr=1.5"
+  },
+  {
+      pass: "pau",
+      page: "https://www.google.com/search?sca_esv=4f737f0b4de0cae7&sxsrf=ADLYWILeVTeObfG1-SEjwLh4IUKBbbygog:1724784183262&q=sabonete&tbm=shop&source=lnms&fbs=AEQNm0AuaLfhdrtx2b9ODfK0pnmi046uB92frSWoVskpBryHTtShVNbk-60xlcGTvYzJ-DKSTGtJjS2FjB5pmTql0ubRQcrur8VCNRNtkKdC3ObBzLG5uJD927skmc0ffBzEdzn1wPWbrw_QIFG567mb2_EbEuDfKuOu5G-bbNI-b0-qO4lhPWOMWBBQT7ghTGIymUr9jDY14y96nlMbASnCVHJYdn7Taw&ved=1t:200715&ictx=111&biw=1280&bih=551&dpr=1.5"
+  },
+  {
+      pass: "pau no cu",
+      page: "https://www.google.com/search?sca_esv=4f737f0b4de0cae7&sxsrf=ADLYWILeVTeObfG1-SEjwLh4IUKBbbygog:1724784183262&q=sabonete&tbm=shop&source=lnms&fbs=AEQNm0AuaLfhdrtx2b9ODfK0pnmi046uB92frSWoVskpBryHTtShVNbk-60xlcGTvYzJ-DKSTGtJjS2FjB5pmTql0ubRQcrur8VCNRNtkKdC3ObBzLG5uJD927skmc0ffBzEdzn1wPWbrw_QIFG567mb2_EbEuDfKuOu5G-bbNI-b0-qO4lhPWOMWBBQT7ghTGIymUr9jDY14y96nlMbASnCVHJYdn7Taw&ved=1t:200715&ictx=111&biw=1280&bih=551&dpr=1.5"
+  },
+  {
+      pass: "filho da puta",
+      page: "https://www.google.com/search?sca_esv=4f737f0b4de0cae7&sxsrf=ADLYWILeVTeObfG1-SEjwLh4IUKBbbygog:1724784183262&q=sabonete&tbm=shop&source=lnms&fbs=AEQNm0AuaLfhdrtx2b9ODfK0pnmi046uB92frSWoVskpBryHTtShVNbk-60xlcGTvYzJ-DKSTGtJjS2FjB5pmTql0ubRQcrur8VCNRNtkKdC3ObBzLG5uJD927skmc0ffBzEdzn1wPWbrw_QIFG567mb2_EbEuDfKuOu5G-bbNI-b0-qO4lhPWOMWBBQT7ghTGIymUr9jDY14y96nlMbASnCVHJYdn7Taw&ved=1t:200715&ictx=111&biw=1280&bih=551&dpr=1.5"
+  },
+  {
+      pass: "puto",
+      page: "https://www.google.com/search?sca_esv=4f737f0b4de0cae7&sxsrf=ADLYWILeVTeObfG1-SEjwLh4IUKBbbygog:1724784183262&q=sabonete&tbm=shop&source=lnms&fbs=AEQNm0AuaLfhdrtx2b9ODfK0pnmi046uB92frSWoVskpBryHTtShVNbk-60xlcGTvYzJ-DKSTGtJjS2FjB5pmTql0ubRQcrur8VCNRNtkKdC3ObBzLG5uJD927skmc0ffBzEdzn1wPWbrw_QIFG567mb2_EbEuDfKuOu5G-bbNI-b0-qO4lhPWOMWBBQT7ghTGIymUr9jDY14y96nlMbASnCVHJYdn7Taw&ved=1t:200715&ictx=111&biw=1280&bih=551&dpr=1.5"
+  },
+  {
+      pass: "foda",
+      page: "https://www.google.com/search?sca_esv=4f737f0b4de0cae7&sxsrf=ADLYWILeVTeObfG1-SEjwLh4IUKBbbygog:1724784183262&q=sabonete&tbm=shop&source=lnms&fbs=AEQNm0AuaLfhdrtx2b9ODfK0pnmi046uB92frSWoVskpBryHTtShVNbk-60xlcGTvYzJ-DKSTGtJjS2FjB5pmTql0ubRQcrur8VCNRNtkKdC3ObBzLG5uJD927skmc0ffBzEdzn1wPWbrw_QIFG567mb2_EbEuDfKuOu5G-bbNI-b0-qO4lhPWOMWBBQT7ghTGIymUr9jDY14y96nlMbASnCVHJYdn7Taw&ved=1t:200715&ictx=111&biw=1280&bih=551&dpr=1.5"
+  },
+  {
+      pass: "fodendo",
+      page: "https://www.google.com/search?sca_esv=4f737f0b4de0cae7&sxsrf=ADLYWILeVTeObfG1-SEjwLh4IUKBbbygog:1724784183262&q=sabonete&tbm=shop&source=lnms&fbs=AEQNm0AuaLfhdrtx2b9ODfK0pnmi046uB92frSWoVskpBryHTtShVNbk-60xlcGTvYzJ-DKSTGtJjS2FjB5pmTql0ubRQcrur8VCNRNtkKdC3ObBzLG5uJD927skmc0ffBzEdzn1wPWbrw_QIFG567mb2_EbEuDfKuOu5G-bbNI-b0-qO4lhPWOMWBBQT7ghTGIymUr9jDY14y96nlMbASnCVHJYdn7Taw&ved=1t:200715&ictx=111&biw=1280&bih=551&dpr=1.5"
+  },
+  {
+      pass: "foder",
+      page: "https://www.google.com/search?sca_esv=4f737f0b4de0cae7&sxsrf=ADLYWILeVTeObfG1-SEjwLh4IUKBbbygog:1724784183262&q=sabonete&tbm=shop&source=lnms&fbs=AEQNm0AuaLfhdrtx2b9ODfK0pnmi046uB92frSWoVskpBryHTtShVNbk-60xlcGTvYzJ-DKSTGtJjS2FjB5pmTql0ubRQcrur8VCNRNtkKdC3ObBzLG5uJD927skmc0ffBzEdzn1wPWbrw_QIFG567mb2_EbEuDfKuOu5G-bbNI-b0-qO4lhPWOMWBBQT7ghTGIymUr9jDY14y96nlMbASnCVHJYdn7Taw&ved=1t:200715&ictx=111&biw=1280&bih=551&dpr=1.5"
+  },
+  {
+      pass: "irmãos",
+      page: "irmaos"
+  },
+  {
+      pass: "LBPD",
+      page: "jailtime"
+  },
+  {
+      pass: "de onde voce vem",
+      page: "deondevocevem"
+  },
+  {
+      pass: "de onde voce vem",
+      page: "deondevocevem"
+  },
+  {
+      pass: "de onde voce vem",
+      page: "deondevocevem"
+  },
+  {
+      pass: "de onde voce vem",
+      page: "deondevocevem"
+  },
+  {
+      pass: "de onde voce vem",
+      page: "deondevocevem"
+  },
+  {
+      pass: "de onde voce vem",
+      page: "deondevocevem"
+  },
+  {
+      pass: "de onde voce vem",
+      page: "deondevocevem"
+  },
+  {
+      pass: "de onde voce vem",
+      page: "deondevocevem"
+  },
+  {
+      pass: "de onde voce vem",
+      page: "deondevocevem"
+  },
+  {
+      pass: "de onde voce vem",
+      page: "deondevocevem"
+  },
+  {
+      pass: "de onde voce vem",
+      page: "deondevocevem"
+  },
+  {
+      pass: "de onde voce vem",
+      page: "deondevocevem"
+  },
+];
+
+function checkPswd() {
+  const passInput = document.getElementById("pswd").value;
+  const passMatch = passwords.find(o => o.pass === passInput);
+
+  if (passMatch ) {
+      console.log(`Redirecting to: "${passMatch.page}"`);
+      window.location = `${passMatch.page}.html`;
+  } else {
+      alert("Brrrrrr errouuuu");
+  }
+}
+</script>
+    </center>
+  </body>
+</html>
