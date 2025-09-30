@@ -293,7 +293,7 @@ function checkPswd() {
 
   if (passMatch ) {
       console.log(`Redirecting to: "${passMatch.page}"`);
-      window.location = `${passMatch.page}.html`;
+      window.open = `${passMatch.page}.html`;
   } else {
       alert("Brrrrrr errouuuu");
   }
@@ -303,3 +303,4 @@ function checkPswd() {
   </body>
 
 </html>
+
