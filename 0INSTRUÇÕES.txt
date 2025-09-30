@@ -1,0 +1,17 @@
+Bem vinde ao meu mundo!
+
+Estávamos esperando por você.
+
+Para iniciar, abra o arquivo "0COMECEAQUI". Esse é o único arquivo que você tem permissão para abrir. Não trapaceie. 
+
+O desafio é simples. O site tem códigos que você pode colocar para obter informações, se comunicar comigo e desvendar o que está embaixo de seus narizes!
+
+As senhas são feitas a partir de números e letras minúsculas APENAS. Podem ter espaços onde é mais óbvio. Você vai saber. Também, lembre-se dos acentos. Pontos finais são permitidos entre números no lugar da vírgula para valer os decimais. Exemplo: 35.7 m
+
+Essa pasta consiste em vários arquivos, como você pode ver, mas isso só são as outras páginas que vão abrir quando você usar os códigos corretos. Não abra de outra maneira, não é porque eu sou um ser todo poderoso que eu consigo pagar um serviço de hosting de sites. Also, não inspecione a página quando aberta, isso é trapaça também, não sei usar php.
+
+Aviso: este é um desafio não linear. A variedade de códigos possíveis é altíssima e alguns vão levar a becos sem saída. Outros levam a mais códigos e mais códigos e mais códigos, então é recomendado que você mantenha registro dos códigos já usados e os resultados que você obteve. Não tenha medo de chutar, você vai se surpreender com a quantidade de códigos.
+
+Aviso 2: o site é meio buggado, então você tem que clicar no botão de Enter para enviar a senha, não adianta apertar o enter do teclado.
+
+Aviso 3: todas as mídias do arg são livre de copyright, então se você for o max e estiver tentando resolver em live, não precisa se preocupar
